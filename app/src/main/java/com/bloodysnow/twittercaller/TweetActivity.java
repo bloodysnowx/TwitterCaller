@@ -32,7 +32,7 @@ public class TweetActivity extends Activity {
         if(textureUrl != null) intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File(textureUrl)));
 
         for(ResolveInfo resolveInfo : getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY)) {
-            if(resolveInfo.activityInfo.name.contains("twitter")) {
+            if(resolveInfo.activityInfo.name.contains("com.twitter")) {
                 intent.setClassName(resolveInfo.activityInfo.packageName, resolveInfo.activityInfo.name);
                 break;
             }
